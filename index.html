@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#FAFAF6">
+<title>Mirko Pacione — Graphic Designer & Comunicatore Visivo</title>
+<meta name="description" content="Mirko Pacione, Graphic Designer con oltre 20 anni di esperienza in grafica pubblicitaria, prestampa, packaging e comunicazione digitale. Brescia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light only;
+  --paper:#FFFFFF;
+  --ink:#121212;
+  --ink-soft:#3d3d3d;
+  --cyan:#00A3E0;
+  --magenta:#E5007D;
+  --yellow:#FFD500;
+  --key:#121212;
+  --hairline:#d8d6cf;
+  --mono:'IBM Plex Mono',monospace;
+  --body:'Archivo',sans-serif;
+  --display:'Archivo Black',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;background:#FFFFFF}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  font-family:var(--body);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--yellow);color:var(--ink)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+img{max-width:100%;display:block}
+
+/* ====== BARRA COLORE CMYK (firma di stampa, fissa in alto) ====== */
+.colorbar{
+  position:fixed;top:0;left:0;right:0;height:6px;z-index:100;
+  display:flex;
+}
+.colorbar span{flex:1}
+.colorbar .c{background:var(--cyan)}
+.colorbar .m{background:var(--magenta)}
+.colorbar .y{background:var(--yellow)}
+.colorbar .k{background:var(--key)}
+
+/* ====== NAV ====== */
+nav{
+  position:fixed;top:6px;left:0;right:0;z-index:90;
+  background:rgba(250,250,246,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--hairline);
+}
+.nav-inner{
+  max-width:1180px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:60px;
+}
+.logo{
+  font-family:var(--mono);font-size:.85rem;font-weight:500;
+  text-decoration:none;letter-spacing:.04em;
+  display:flex;align-items:center;gap:10px;
+}
+.logo .reg{
+  width:18px;height:18px;flex:none;
+}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{
+  font-family:var(--mono);font-size:.78rem;text-decoration:none;
+  padding:8px 12px;letter-spacing:.03em;
+  border:1px solid transparent;
+}
+.nav-links a:hover{border-color:var(--ink)}
+.nav-links a b{font-weight:500}
+.nav-links .dot{display:inline-block;width:8px;height:8px;margin-right:6px;vertical-align:baseline}
+.dot.c{background:var(--cyan)}.dot.m{background:var(--magenta)}.dot.y{background:var(--yellow)}.dot.k{background:var(--key)}
+.menu-btn{display:none;background:none;border:1px solid var(--ink);font-family:var(--mono);font-size:.78rem;padding:8px 14px;cursor:pointer}
+@media(max-width:860px){
+  .nav-links{
+    display:none;position:absolute;top:60px;left:0;right:0;
+    background:var(--paper);border-bottom:1px solid var(--hairline);
+    flex-direction:column;padding:12px 24px 20px;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 0;border-bottom:1px solid var(--hairline)}
+  .menu-btn{display:block}
+}
+
+/* ====== CROCINI DI REGISTRO (decorazione angoli sezioni) ====== */
+.crop{position:relative}
+.crop::before,.crop::after{
+  content:"";position:absolute;width:22px;height:22px;pointer-events:none;
+  border:0 solid var(--ink);opacity:.55;
+}
+.crop::before{top:18px;left:18px;border-top-width:1.5px;border-left-width:1.5px}
+.crop::after{bottom:18px;right:18px;border-bottom-width:1.5px;border-right-width:1.5px}
+
+/* ====== HERO ====== */
+header.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;justify-content:center;
+  max-width:1180px;margin:0 auto;padding:140px 24px 80px;
+  position:relative;
+}
+.proof-tag{
+  font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid var(--ink);padding:6px 12px;width:max-content;
+  margin-bottom:32px;
+}
+.proof-tag .led{width:8px;height:8px;border-radius:50%;background:var(--magenta)}
+h1{
+  font-family:var(--display);
+  font-size:clamp(2.6rem,8.5vw,6.4rem);
+  line-height:.95;letter-spacing:-.01em;
+  text-transform:uppercase;
+  margin-bottom:28px;
+}
+h1 .outline{
+  color:transparent;
+  -webkit-text-stroke:2px var(--ink);
+}
+.hero-sub{
+  display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px;
+}
+.hero-sub span{
+  font-family:var(--mono);font-size:.8rem;letter-spacing:.04em;
+  padding:7px 14px;border:1px solid var(--ink);
+}
+.hero-sub span.fill-c{background:var(--cyan);color:#fff;border-color:var(--cyan)}
+.hero-sub span.fill-m{background:var(--magenta);color:#fff;border-color:var(--magenta)}
+.hero-sub span.fill-y{background:var(--yellow);border-color:var(--yellow)}
+.hero-claim{
+  max-width:640px;font-size:clamp(1.05rem,2vw,1.25rem);
+  color:var(--ink-soft);margin-bottom:48px;
+}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.btn{
+  font-family:var(--mono);font-size:.85rem;letter-spacing:.04em;
+  text-decoration:none;padding:15px 28px;border:1.5px solid var(--ink);
+  transition:transform .15s ease, box-shadow .15s ease;
+  display:inline-block;background:var(--paper);
+}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--cyan)}
+.btn.primary:hover{box-shadow:5px 5px 0 var(--magenta)}
+.stamp{
+  position:absolute;right:24px;bottom:60px;
+  font-family:var(--mono);font-size:.72rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  border:2.5px solid var(--magenta);color:var(--magenta);
+  padding:10px 18px;transform:rotate(-7deg);
+  opacity:.85;user-select:none;
+}
+@media(max-width:680px){.stamp{position:static;width:max-content;margin-top:48px;transform:rotate(-4deg)}}
+
+/* ====== STRUTTURA SEZIONI ====== */
+section{max-width:1180px;margin:0 auto;padding:96px 24px}
+.sec-head{
+  display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;
+  border-bottom:1.5px solid var(--ink);padding-bottom:18px;margin-bottom:48px;
+}
+.sec-head .plate{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;
+  color:#fff;padding:5px 11px;
+}
+.plate.c{background:var(--cyan)}.plate.m{background:var(--magenta)}
+.plate.y{background:var(--yellow);color:var(--ink)}.plate.k{background:var(--key)}
+h2{
+  font-family:var(--display);text-transform:uppercase;
+  font-size:clamp(1.7rem,4vw,2.8rem);letter-spacing:-.01em;
+}
+.sec-head .spec{
+  font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);
+  margin-left:auto;letter-spacing:.05em;
+}
+@media(max-width:680px){.sec-head .spec{display:none}}
+
+/* ====== ABOUT ====== */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+.about-text p{margin-bottom:20px;font-size:1.05rem;color:var(--ink-soft)}
+.about-text strong{color:var(--ink)}
+.spec-sheet{
+  border:1.5px solid var(--ink);padding:28px;
+  font-family:var(--mono);font-size:.82rem;
+  height:max-content;background:#fff;
+}
+.spec-sheet h3{
+  font-family:var(--mono);font-size:.78rem;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;
+  border-bottom:1px solid var(--hairline);padding-bottom:12px;margin-bottom:16px;
+}
+.spec-sheet dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px}
+.spec-sheet dt{color:var(--ink-soft)}
+.spec-sheet dd{font-weight:500;word-break:break-word}
+.spec-sheet a{text-decoration-color:var(--cyan);text-decoration-thickness:2px}
+
+/* ====== PORTFOLIO ====== */
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+@media(max-width:760px){.work-grid{grid-template-columns:1fr}}
+.work-card{
+  border:1.5px solid var(--ink);background:#fff;
+  display:flex;flex-direction:column;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.work-card:hover{transform:translate(-4px,-4px)}
+.work-card:nth-child(1):hover{box-shadow:6px 6px 0 var(--cyan)}
+.work-card:nth-child(2):hover{box-shadow:6px 6px 0 var(--magenta)}
+.work-card:nth-child(3):hover{box-shadow:6px 6px 0 var(--yellow)}
+.work-card:nth-child(4):hover{box-shadow:6px 6px 0 var(--key)}
+.work-visual{
+  aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
+  border-bottom:1.5px solid var(--ink);position:relative;overflow:hidden;
+}
+.work-visual .wm{
+  font-family:var(--display);text-transform:uppercase;
+  font-size:clamp(1.4rem,3.4vw,2.2rem);line-height:1;
+  text-align:center;padding:0 20px;
+}
+.wv-1{background:repeating-linear-gradient(45deg,var(--cyan) 0 14px,#0090c8 14px 28px);color:#fff}
+.wv-2{background:repeating-linear-gradient(-45deg,var(--magenta) 0 14px,#c4006a 14px 28px);color:#fff}
+.wv-3{background:repeating-linear-gradient(90deg,var(--yellow) 0 14px,#e8c200 14px 28px);color:var(--ink)}
+.wv-4{background:repeating-linear-gradient(0deg,#1c1c1c 0 14px,var(--key) 14px 28px);color:#fff}
+.work-visual .corner{
+  position:absolute;font-family:var(--mono);font-size:.62rem;
+  letter-spacing:.08em;opacity:.85;
+}
+.corner.tl{top:10px;left:12px}.corner.br{bottom:10px;right:12px}
+.work-body{padding:24px 26px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
+.work-body h3{font-size:1.15rem;font-weight:700}
+.work-body p{font-size:.92rem;color:var(--ink-soft);flex:1}
+.work-tags{display:flex;flex-wrap:wrap;gap:8px}
+.work-tags span{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;
+  border:1px solid var(--hairline);padding:4px 9px;background:var(--paper);
+}
+.work-note{
+  margin-top:36px;font-family:var(--mono);font-size:.78rem;
+  color:var(--ink-soft);border-left:3px solid var(--yellow);padding-left:16px;
+}
+
+/* ====== ESPERIENZE (ordine di lavoro) ====== */
+.jobs{display:flex;flex-direction:column;gap:0}
+.job{
+  display:grid;grid-template-columns:170px 1fr;gap:28px;
+  padding:32px 0;border-bottom:1px solid var(--hairline);
+  position:relative;
+}
+@media(max-width:680px){.job{grid-template-columns:1fr;gap:10px}}
+.job-when{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;
+  color:var(--ink-soft);padding-top:5px;
+}
+.job-when b{display:block;color:var(--ink);font-weight:500}
+.job h3{font-size:1.18rem;font-weight:700;margin-bottom:2px}
+.job .firm{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.05em;
+  color:var(--magenta);margin-bottom:12px;display:block;font-weight:500;
+}
+.job ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.job li{
+  font-size:.94rem;color:var(--ink-soft);padding-left:20px;position:relative;
+}
+.job li::before{
+  content:"";position:absolute;left:0;top:.55em;
+  width:9px;height:9px;border:1.5px solid var(--ink);
+}
+.job:nth-child(4n+1) li::before{background:var(--cyan);border-color:var(--cyan)}
+.job:nth-child(4n+2) li::before{background:var(--magenta);border-color:var(--magenta)}
+.job:nth-child(4n+3) li::before{background:var(--yellow);border-color:var(--yellow)}
+.job:nth-child(4n+4) li::before{background:var(--key)}
+
+/* ====== SKILLS ====== */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media(max-width:920px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.skills-grid{grid-template-columns:1fr}}
+.skill-box{border:1.5px solid var(--ink);background:#fff}
+.skill-box h3{
+  font-family:var(--mono);font-size:.78rem;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:14px 20px;border-bottom:1.5px solid var(--ink);
+  display:flex;align-items:center;gap:10px;
+}
+.skill-box ul{list-style:none;padding:18px 20px;display:flex;flex-wrap:wrap;gap:8px}
+.skill-box li{
+  font-size:.84rem;border:1px solid var(--hairline);
+  padding:6px 12px;background:var(--paper);
+}
+.langs{
+  margin-top:36px;font-family:var(--mono);font-size:.82rem;
+  display:flex;gap:28px;flex-wrap:wrap;color:var(--ink-soft);
+}
+.langs b{color:var(--ink);font-weight:500}
+
+/* ====== EDUCATION ====== */
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media(max-width:860px){.edu-grid{grid-template-columns:1fr}}
+.edu{border-top:3px solid var(--ink);padding-top:18px}
+.edu:nth-child(1){border-color:var(--cyan)}
+.edu:nth-child(2){border-color:var(--magenta)}
+.edu:nth-child(3){border-color:var(--yellow)}
+.edu .yr{font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);letter-spacing:.05em}
+.edu h3{font-size:1.05rem;margin:8px 0 4px}
+.edu p{font-size:.88rem;color:var(--ink-soft)}
+
+/* ====== CONTATTI ====== */
+.contact{
+  background:var(--paper);color:var(--ink);
+  max-width:none;padding:0;
+  border-top:1.5px solid var(--ink);
+}
+.contact-inner{max-width:1180px;margin:0 auto;padding:96px 24px}
+.contact h2{color:var(--ink);margin-bottom:8px}
+.contact .lede{color:var(--ink-soft);max-width:560px;margin-bottom:48px;font-size:1.05rem}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--ink);border:1.5px solid var(--ink)}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+.contact-cell{
+  background:#fff;padding:30px 26px;text-decoration:none;
+  display:flex;flex-direction:column;gap:8px;
+  transition:background .15s ease;
+}
+.contact-cell:hover{background:var(--paper)}
+.contact-cell .lbl{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.contact-cell .val{font-size:1.02rem;font-weight:600;word-break:break-word;color:var(--ink)}
+.contact-cell:nth-child(1) .lbl{color:var(--cyan)}
+.contact-cell:nth-child(2) .lbl{color:var(--magenta)}
+.contact-cell:nth-child(3) .lbl{color:#b89a00}
+footer{
+  border-top:1px solid var(--hairline);margin-top:72px;padding-top:28px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);letter-spacing:.04em;
+}
+
+/* ====== REVEAL ====== */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="colorbar" aria-hidden="true"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
+
+<nav aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a class="logo" href="#top" aria-label="Mirko Pacione — torna in cima">
+      <svg class="reg" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="none" stroke="#121212" stroke-width="1.5"/><line x1="10" y1="0" x2="10" y2="20" stroke="#121212" stroke-width="1.5"/><line x1="0" y1="10" x2="20" y2="10" stroke="#121212" stroke-width="1.5"/></svg>
+      MIRKO_PACIONE.pdf
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="navlinks" onclick="toggleMenu(this)">MENU</button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#progetti"><span class="dot c"></span><b>Progetti</b></a></li>
+      <li><a href="#esperienze"><span class="dot m"></span><b>Esperienze</b></a></li>
+      <li><a href="#competenze"><span class="dot y"></span><b>Competenze</b></a></li>
+      <li><a href="#contatti"><span class="dot k"></span><b>Contatti</b></a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero crop" id="top">
+  <span class="proof-tag"><span class="led" aria-hidden="true"></span>PROVA COLORE · BRESCIA · 2026</span>
+  <h1>Mirko<br>Pacione<br><span class="outline">Visual&nbsp;Designer</span></h1>
+  <div class="hero-sub">
+    <span class="fill-c">GRAPHIC DESIGN</span>
+    <span class="fill-m">PRESTAMPA &amp; PRODUZIONE</span>
+    <span class="fill-y">DIGITAL &amp; AI</span>
+    <span>20+ ANNI DI MESTIERE</span>
+  </div>
+  <p class="hero-claim">Dalla creatività alla macchina da stampa: progetto comunicazione visiva che funziona davvero — cataloghi, packaging, grande formato e contenuti digitali, con la precisione di chi conosce ogni passaggio della filiera.</p>
+  <div class="hero-cta">
+    <a class="btn primary" href="#progetti">Guarda i progetti</a>
+    <a class="btn" href="#contatti">Parliamone</a>
+  </div>
+  <span class="stamp" aria-hidden="true">Visto · Si stampi</span>
+</header>
+
+<section id="chi-sono" class="crop">
+  <div class="sec-head reveal">
+    <span class="plate k">FILE 01</span>
+    <h2>Chi sono</h2>
+    <span class="spec">FORMATO: A4 · PROFILO: FOGRA39</span>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>Sono un <strong>Graphic Designer e Comunicatore Visivo</strong> con oltre 20 anni di esperienza tra grafica pubblicitaria, stampa e comunicazione digitale. Ho lavorato in aziende, agenzie e centri stampa, seguendo i progetti <strong>dalla creatività alla produzione</strong>: cataloghi, packaging, visual per eventi e materiale promozionale, B2B e B2C.</p>
+      <p>Negli ultimi anni ho integrato le competenze tradizionali con il <strong>digital marketing</strong>, la gestione di contenuti web e strumenti di <strong>AI e configuratori 3D</strong>, per offrire soluzioni visive più efficaci, strategiche e contemporanee.</p>
+      <p>Mi contraddistinguono <strong>precisione, versatilità e problem solving</strong>. Credo nel design come strumento per valorizzare l'identità di un brand, semplificare i messaggi e creare connessioni autentiche.</p>
+    </div>
+    <aside class="spec-sheet reveal" aria-label="Scheda tecnica">
+      <h3>Scheda tecnica</h3>
+      <dl>
+        <dt>Base</dt><dd>San Zeno Naviglio (BS)</dd>
+        <dt>Ruoli</dt><dd>Grafico · Digital Creator · Print Specialist</dd>
+        <dt>Modalità</dt><dd>In presenza / ibrido</dd>
+        <dt>Lingue</dt><dd>Italiano (madrelingua) · Inglese (intermedio)</dd>
+        <dt>Contatto</dt><dd><a href="mailto:pacionemirko.brescia@gmail.com">pacionemirko.brescia@gmail.com</a></dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section id="progetti" class="crop">
+  <div class="sec-head reveal">
+    <span class="plate c">FILE 02</span>
+    <h2>Progetti selezionati</h2>
+    <span class="spec">QUADRICROMIA · 300 DPI · CON ABBONDANZA</span>
+  </div>
+  <div class="work-grid">
+    <article class="work-card reveal">
+      <div class="work-visual wv-1">
+        <span class="corner tl">C 100 · M 0 · Y 0 · K 0</span>
+        <span class="wm">Etichette &amp; Packaging</span>
+        <span class="corner br">MOCKUP / PRINT</span>
+      </div>
+      <div class="work-body">
+        <h3>Brand identity, etichette e packaging</h3>
+        <p>Mockup realistici di etichette, scatole e confezioni curati nei minimi dettagli: dalla proposta creativa al file pronto per la fustella. Estetica, funzionalità e coerenza visiva in ogni proposta.</p>
+        <div class="work-tags"><span>Packaging</span><span>Branding</span><span>Prestampa</span><span>Mockup 3D</span></div>
+      </div>
+    </article>
+    <article class="work-card reveal">
+      <div class="work-visual wv-2">
+        <span class="corner tl">C 0 · M 100 · Y 0 · K 0</span>
+        <span class="wm">Menu &amp; Cataloghi</span>
+        <span class="corner br">EDITORIA / HORECA</span>
+      </div>
+      <div class="work-body">
+        <h3>Impaginazione editoriale e ristorazione</h3>
+        <p>Menù, cataloghi prodotto e materiali editoriali — come il progetto completo per il ristorante "Il Primo": carta dei vini, menù di Capodanno, visual coordinati per stampa e social.</p>
+        <div class="work-tags"><span>Impaginazione</span><span>Cataloghi B2B/B2C</span><span>Food &amp; Beverage</span></div>
+      </div>
+    </article>
+    <article class="work-card reveal">
+      <div class="work-visual wv-3">
+        <span class="corner tl">C 0 · M 0 · Y 100 · K 0</span>
+        <span class="wm">Punto Vendita &amp; Eventi</span>
+        <span class="corner br">GRANDE FORMATO</span>
+      </div>
+      <div class="work-body">
+        <h3>Materiale per retail e fiere</h3>
+        <p>Roll-up, espositori, totem e backdrop per convegni e fiere, progettati per massimizzare l'impatto visivo e la riconoscibilità del brand in ambienti retail e fieristici.</p>
+        <div class="work-tags"><span>Roll-up</span><span>Espositori</span><span>Allestimenti</span><span>Plotter</span></div>
+      </div>
+    </article>
+    <article class="work-card reveal">
+      <div class="work-visual wv-4">
+        <span class="corner tl">C 0 · M 0 · Y 0 · K 100</span>
+        <span class="wm">Social, Web &amp; AI</span>
+        <span class="corner br">DIGITAL / CONTENT</span>
+      </div>
+      <div class="work-body">
+        <h3>Contenuti digitali e identità online</h3>
+        <p>Feed Instagram coordinati, campagne ADV, pagine WordPress, email marketing e visual generati con workflow AI — come il progetto integrato per il brand di arredo bagno "Essentia" e il festival "Synth City".</p>
+        <div class="work-tags"><span>Social media</span><span>WordPress</span><span>Email marketing</span><span>AI workflow</span></div>
+      </div>
+    </article>
+  </div>
+  <p class="work-note">NOTA DI PRODUZIONE — Sostituisci i pannelli colorati con le immagini reali dei progetti (formato consigliato 16:9, JPG ottimizzato ≤ 300 KB) per la versione definitiva.</p>
+</section>
+
+<section id="esperienze" class="crop">
+  <div class="sec-head reveal">
+    <span class="plate m">FILE 03</span>
+    <h2>Esperienze</h2>
+    <span class="spec">ORDINE DI LAVORO · CRONOLOGIA INVERSA</span>
+  </div>
+  <div class="jobs">
+    <article class="job reveal">
+      <div class="job-when"><b>Dic 2024 — Giu 2025</b>sostituzione maternità</div>
+      <div>
+        <h3>Graphic &amp; Digital Marketing</h3>
+        <span class="firm">TDA SRL</span>
+        <ul>
+          <li>Comunicazione visiva B2B/B2C: cataloghi, ADV, contenuti digitali</li>
+          <li>Integrazione con team tecnico per configuratori 3D e supporto software</li>
+          <li>SEO, content creation e digital marketing</li>
+        </ul>
+      </div>
+    </article>
+    <article class="job reveal">
+      <div class="job-when"><b>Lug 2024 — Lug 2025</b></div>
+      <div>
+        <h3>Graphic Designer &amp; Print Center Specialist</h3>
+        <span class="firm">OFFICE STORE GIUSTACCHINI</span>
+        <ul>
+          <li>Gestione grafica e operativa del Centro Copie per privati e aziende</li>
+          <li>Materiali stampati: dal biglietto da visita al grande formato</li>
+          <li>Marketing interno del punto vendita</li>
+        </ul>
+      </div>
+    </article>
+    <article class="job reveal">
+      <div class="job-when"><b>2022 — 2023</b></div>
+      <div>
+        <h3>Portalettere</h3>
+        <span class="firm">POSTE ITALIANE S.P.A.</span>
+        <ul>
+          <li>Recapito e logistica su Brescia e provincia (PTL)</li>
+          <li>Gestione chiusura incassi</li>
+        </ul>
+      </div>
+    </article>
+    <article class="job reveal">
+      <div class="job-when"><b>2018 — 2021</b></div>
+      <div>
+        <h3>Graphic Designer &amp; Web Communication Specialist</h3>
+        <span class="firm">ETRACOM · LITOS · KARTELL SYSTEM</span>
+        <ul>
+          <li>Progettazione grafica per cataloghi, volantini e materiali fieristici</li>
+          <li>Gestione contenuti web e social media (WordPress, pagine aziendali)</li>
+          <li>Vendita e supporto clienti commerciale/tecnico, strumenti 3D e rendering</li>
+        </ul>
+      </div>
+    </article>
+    <article class="job reveal">
+      <div class="job-when"><b>2013 — 2017</b></div>
+      <div>
+        <h3>Graphic Designer Senior &amp; Coordinatore Creativo</h3>
+        <span class="firm">GRAPHIC STYLE – EUROIMAGE · CLAS EVENTI · CEMBRE</span>
+        <ul>
+          <li>Ideazione visual per campagne pubblicitarie e fiere</li>
+          <li>Coordinamento produzione grafica, fornitori esterni e team</li>
+          <li>Impaginazione editoriale, prestampa, gestione file per tipografia</li>
+        </ul>
+      </div>
+    </article>
+    <article class="job reveal">
+      <div class="job-when"><b>2007 — 2012</b></div>
+      <div>
+        <h3>Graphic Designer &amp; Marketing Operativo</h3>
+        <span class="firm">CARTOTECNICA ALFA · MASTER PUBBLICITÀ · SNOWSTAR S.P.A. · PUBLIADIGE</span>
+        <ul>
+          <li>Materiali BTL e ATL per eventi, fiere, negozi e packaging</li>
+          <li>Grandi formati, plotter, produzione e montaggio</li>
+          <li>Primi incarichi come grafico esecutivo: volantini, loghi, cataloghi e gestione clienti</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="competenze" class="crop">
+  <div class="sec-head reveal">
+    <span class="plate y">FILE 04</span>
+    <h2>Competenze</h2>
+    <span class="spec">REPARTI DI PRODUZIONE</span>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-box reveal">
+      <h3><span class="dot c" aria-hidden="true"></span>Design &amp; Creatività</h3>
+      <ul>
+        <li>Graphic Design</li><li>Visual Communication</li><li>Branding</li>
+        <li>Packaging Design</li><li>Impaginazione professionale</li><li>Adobe Creative Suite</li>
+      </ul>
+    </div>
+    <div class="skill-box reveal">
+      <h3><span class="dot m" aria-hidden="true"></span>Stampa &amp; Produzione</h3>
+      <ul>
+        <li>Prestampa offset / digitale</li><li>Grande formato</li><li>Produzione grafica</li>
+        <li>Materiale BTL</li><li>Gestione file per tipografia</li><li>Gestione ordini e logistica</li>
+      </ul>
+    </div>
+    <div class="skill-box reveal">
+      <h3><span class="dot y" aria-hidden="true"></span>Digital &amp; Web</h3>
+      <ul>
+        <li>Web Content Creation</li><li>WordPress</li><li>Social Media Content</li>
+        <li>Newsletter design</li><li>Strumenti AI</li><li>Configuratori 3D &amp; Rendering</li>
+      </ul>
+    </div>
+    <div class="skill-box reveal">
+      <h3><span class="dot k" aria-hidden="true"></span>Cliente &amp; Commerciale</h3>
+      <ul>
+        <li>Supporto clienti</li><li>Vendita diretta</li><li>Offerte e preventivi</li><li>CRM base</li>
+      </ul>
+    </div>
+    <div class="skill-box reveal">
+      <h3><span class="dot c" aria-hidden="true"></span>Metodo di lavoro</h3>
+      <ul>
+        <li>Precisione</li><li>Problem solving</li><li>Autonomia operativa</li>
+        <li>Gestione del tempo</li><li>Multitasking</li><li>Rapidità esecutiva</li>
+      </ul>
+    </div>
+    <div class="skill-box reveal">
+      <h3><span class="dot m" aria-hidden="true"></span>Relazione</h3>
+      <ul>
+        <li>Comunicazione efficace</li><li>Collaborazione in team</li><li>Orientamento al cliente</li>
+        <li>Flessibilità</li><li>Affidabilità</li><li>Proattività</li>
+      </ul>
+    </div>
+  </div>
+  <div class="langs reveal">
+    <span><b>IT</b> Italiano · madrelingua</span>
+    <span><b>EN</b> Inglese · intermedio</span>
+  </div>
+</section>
+
+<section id="formazione" class="crop">
+  <div class="sec-head reveal">
+    <span class="plate k">FILE 05</span>
+    <h2>Formazione</h2>
+    <span class="spec">PERCORSO · 1998 → OGGI</span>
+  </div>
+  <div class="edu-grid">
+    <div class="edu reveal">
+      <span class="yr">1998 — 2004</span>
+      <h3>Diploma Tecnico Grafico Pubblicitario</h3>
+      <p>I.I.S.S. "C. Golgi" — Brescia</p>
+    </div>
+    <div class="edu reveal">
+      <span class="yr">2005</span>
+      <h3>Web Master</h3>
+      <p>C.I.B. Centro Informatico Bresciano — Brescia</p>
+    </div>
+    <div class="edu reveal">
+      <span class="yr">2020 — in corso</span>
+      <h3>Digital Marketing · Social Media · AI</h3>
+      <p>Formazione continua su Udemy: strategie digitali, content e strumenti di intelligenza artificiale</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contatti">
+  <div class="contact-inner crop">
+    <div class="sec-head reveal">
+      <span class="plate y">FILE 06</span>
+      <h2>Andiamo in stampa?</h2>
+    </div>
+    <p class="lede reveal">Disponibile per ruoli in presenza o ibridi in ambito grafico, comunicazione, marketing digitale e creazione contenuti. Scrivimi: rispondo in giornata.</p>
+    <div class="contact-grid reveal">
+      <a class="contact-cell" href="mailto:pacionemirko.brescia@gmail.com">
+        <span class="lbl">Email</span>
+        <span class="val">pacionemirko.brescia@gmail.com</span>
+      </a>
+      <a class="contact-cell" href="tel:+393288732822">
+        <span class="lbl">Telefono</span>
+        <span class="val">+39 328 8732822</span>
+      </a>
+      <a class="contact-cell" href="https://www.linkedin.com/in/mirko-pacione-b7a665b4" target="_blank" rel="noopener">
+        <span class="lbl">LinkedIn</span>
+        <span class="val">mirko-pacione</span>
+      </a>
+    </div>
+    <footer>
+      <span>© 2026 MIRKO PACIONE — SAN ZENO NAVIGLIO (BS)</span>
+      <span>STAMPATO IN QUADRICROMIA · C·M·Y·K</span>
+    </footer>
+  </div>
+</section>
+
+<script>
+function toggleMenu(btn){
+  const links=document.getElementById('navlinks');
+  const open=links.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+}
+document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('navlinks').classList.remove('open');
+  document.querySelector('.menu-btn').setAttribute('aria-expanded','false');
+}));
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
